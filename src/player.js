@@ -1,6 +1,7 @@
 "use strict";
 
 const MS_PER_FRAME = 1000/8;
+const MAX_VELOCITY = 5;
 
 /**
  * @module exports the Player class
@@ -88,6 +89,22 @@ Player.prototype.update = function(time) {
     }
     this.velocity.x -= acceleration.x;
     this.velocity.y -= acceleration.y;
+    if(this.velocity.x > MAX_VELOCITY){
+      this.velocity.x = MAX_VELOCITY;
+    }
+    // different direction
+    else if(this.velocity.x > -1 * MAX_VELOCITY){
+      this.velocity.x = -1 * MAX_VELOCITY;
+    }
+    if(this.velocity.y > MAX_VELOCITY){
+      this.velocity.y = MAX_VELOCITY;
+    }
+    // different direction
+    else if(this.velocity.y > -1 * MAX_VELOCITY){
+      this.velocity.y = -1 * MAX_VELOCITY;
+    }
+
+
   }
   // Apply velocity
   this.position.x += this.velocity.x;
