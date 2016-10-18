@@ -1,7 +1,7 @@
 "use strict";
 
 const MS_PER_FRAME = 1000/8;
-const MAX_VELOCITY = 5;
+const MAX_VELOCITY = 3;
 
 /**
  * @module exports the Player class
@@ -103,8 +103,6 @@ Player.prototype.update = function(time) {
     else if(this.velocity.y > -1 * MAX_VELOCITY){
       this.velocity.y = -1 * MAX_VELOCITY;
     }
-
-
   }
   // Apply velocity
   this.position.x += this.velocity.x;
