@@ -14,7 +14,7 @@ var random = getRandomInt(1, 3);
  * Creates a new asteroid object
  * @param {Postition} position object specifying an x and y
  */
-function Asteroid(position, canvas) {
+function Asteroid(position, canvas, size) {
   this.worldWidth = canvas.width;
   this.worldHeight = canvas.height;
   this.position = {
@@ -27,6 +27,7 @@ function Asteroid(position, canvas) {
     y: Math.cos(this.angle) * 0.5
   };
   this.color = "white";
+  this.size = 32;
   switch (random){
   // large
     case 1:
